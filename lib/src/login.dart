@@ -6,11 +6,14 @@ class MeuPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
-            title: const Text("Principal"),
+            title: const Text("Login"),
             centerTitle: true,
           ),
           body: Column(
-            children: [Text('data')],
+            children: [
+              Text('Usuário'),
+              Text('Senha'),
+            ],
           )),
     );
   }

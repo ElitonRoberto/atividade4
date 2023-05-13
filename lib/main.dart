@@ -9,7 +9,6 @@ void main() {
 class MeuApp extends StatelessWidget {
   const MeuApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,7 +16,7 @@ class MeuApp extends StatelessWidget {
         '/login':(context) => MeuPage(),
         '/cadastro':(context) => Formulario(),
       },
-      initialRoute: '/login',
+      initialRoute: '/cadastro',
     );
   }
 }
