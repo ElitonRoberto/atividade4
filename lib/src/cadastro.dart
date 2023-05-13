@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Formulario extends StatefulWidget {
-  const Formulario({super.key});
+class Formulario2 extends StatefulWidget {
+  const Formulario2({super.key});
 
   @override
-  _Formulario createState() => _Formulario();
+  _Formulario2 createState() => _Formulario2();
 }
 
-class _Formulario extends State<Formulario> {
+class _Formulario2 extends State<Formulario2> {
   final _formkey = GlobalKey<FormState>();
 
   //String nome = '';
@@ -34,7 +34,7 @@ class _Formulario extends State<Formulario> {
           ),
          TextFormField(
             decoration: const InputDecoration(
-              hintText: "Senha",
+              hintText: "Email",
             ),
             validator: (value) {
               if (value!.isEmpty) {
