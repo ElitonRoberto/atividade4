@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Formulario extends StatefulWidget {
+  const Formulario({super.key});
+
+  @override
   _Formulario createState() => _Formulario();
 }
 
 class _Formulario extends State<Formulario> {
   final _formkey = GlobalKey<FormState>();
 
-  String nome = '';
+  //String nome = '';
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +19,20 @@ class _Formulario extends State<Formulario> {
       child: Column(
         children: [
           TextFormField(
-              decoration: InputDecoration(
-                hintText: 'Name',
-              ),
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return 'informe algum texto';
-                }
-                return null;
-              }),
-          Container(
+            decoration: InputDecoration(
+              hintText: 'Name',
+            ),
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'informe algum texto';
+              }
+              return null;
+            },
+          ),
+         Container(
             height: 20,
           ),
-          TextFormField(
+         TextFormField(
             decoration: const InputDecoration(
               hintText: "Senha",
             ),
@@ -40,10 +44,11 @@ class _Formulario extends State<Formulario> {
             },
           ),
           ElevatedButton(
-              onPressed: () {
-                if (_formkey.currentState!.validate()) ;
-              },
-              child: const Text('enviar'))
+            onPressed: () {
+              if (_formkey.currentState!.validate()) ;
+            },
+            child: Text('enviar'),
+          ),
         ],
       ),
     );

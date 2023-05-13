@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'cadastro.dart';
 
 class MeuPage extends StatelessWidget {
   @override
@@ -13,6 +14,7 @@ class MeuPage extends StatelessWidget {
             children: [
               Text('Usuário'),
               Text('Senha'),
+              Formulario(),
             ],
           )),
     );

@@ -16,7 +16,7 @@ class MeuApp extends StatelessWidget {
         '/login':(context) => MeuPage(),
         '/cadastro':(context) => Formulario(),
       },
-      initialRoute: '/cadastro',
+      initialRoute: '/login',
     );
   }
 }
