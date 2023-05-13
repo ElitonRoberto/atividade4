@@ -15,7 +15,7 @@ class MeuApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/login':(context) => MeuPage(),
-        '/cadastro':(context) => Cadastro(),
+        '/cadastro':(context) => Formulario(),
       },
       initialRoute: '/login',
     );
