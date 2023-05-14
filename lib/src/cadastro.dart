@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
 
-class Formulario2 extends StatefulWidget {
-  const Formulario2({super.key});
+class PageCadastro extends StatelessWidget {
+  const PageCadastro({super.key});
 
   @override
-  _Formulario2 createState() => _Formulario2();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Cadastro"),
+          centerTitle: true,
+        ),
+        body: const Column(
+          children: [
+            FormCadastro(), //precisa da estrutura body para ser chamado
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-class _Formulario2 extends State<Formulario2> {
+class FormCadastro extends StatefulWidget {
+  const FormCadastro({super.key});
+
+  @override
+  _FormCadastro createState() => _FormCadastro();
+}
+
+class _FormCadastro extends State<FormCadastro> {
   final _formkey = GlobalKey<FormState>();
 
   //String nome = '';
@@ -19,35 +40,67 @@ class _Formulario2 extends State<Formulario2> {
       child: Column(
         children: [
           TextFormField(
-            decoration: InputDecoration(
-              hintText: 'Name',
+            decoration: const InputDecoration(
+              hintText: 'Nome',
             ),
             validator: (value) {
               if (value!.isEmpty) {
-                return 'informe algum texto';
+                return 'Informe seu nome';
               }
               return null;
             },
           ),
-         Container(
+          Container(
             height: 20,
           ),
-         TextFormField(
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Sobrenome',
+            ),
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Informe seu sobrenome';
+              }
+              return null;
+            },
+          ),
+          Container(
+            height: 20,
+          ),
+          TextFormField(
             decoration: const InputDecoration(
               hintText: "Email",
             ),
             validator: (value) {
               if (value!.isEmpty) {
-                return 'informe algum texto';
+                return 'Informe seu email';
               }
               return null;
             },
           ),
+          Container(
+            height: 20,
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              hintText: 'Senha',
+            ),
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'Informe sua senha';
+              }
+              return null;
+            },
+          ),
+          Container(
+            height: 20,
+          ),
           ElevatedButton(
             onPressed: () {
-              if (_formkey.currentState!.validate()) ;
+              if (_formkey.currentState!.validate()) {}
+              setState(() {});
             },
-            child: Text('enviar'),
+            child: const Text('Cadastrar'),
           ),
         ],
       ),

@@ -1,37 +1,38 @@
 import 'package:flutter/material.dart';
+import 'cadastro.dart';
 
+class PageLogin extends StatelessWidget {
+  const PageLogin({super.key});
 
-class MeuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            title: const Text("Login"),
-            centerTitle: true,
-          ),
-          body: Column(
-            children: [
-              //Text('Usuário'),
-              //Text('Senha'),
-              Formulario(),//precisa da estrutura body para ser chamado
-            ],
-          )),
+        appBar: AppBar(
+          title: const Text("Login"),
+          centerTitle: true,
+        ),
+        body: const Column(
+          children: [
+            FormLogin(), //precisa da estrutura body para ser chamado
+          ],
+        ),
+      ),
     );
   }
 }
 
-class Formulario extends StatefulWidget {
-  const Formulario({super.key});
+class FormLogin extends StatefulWidget {
+  const FormLogin({super.key});
 
   @override
-  _Formulario createState() => _Formulario();
+  _FormLogin createState() => _FormLogin();
 }
 
-class _Formulario extends State<Formulario> {
+class _FormLogin extends State<FormLogin> {
   final _formkey = GlobalKey<FormState>();
 
-  //String nome = '';
+  bool a = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,36 +41,42 @@ class _Formulario extends State<Formulario> {
       child: Column(
         children: [
           TextFormField(
-            decoration: InputDecoration(
-              hintText: 'Name',
+            decoration: const InputDecoration(
+              hintText: 'Usuário',
             ),
             validator: (value) {
               if (value!.isEmpty) {
-                return 'informe algum texto';
+                return 'Informe o usuário';
+              } else if (value == 'A') {
+                //return
               }
               return null;
             },
           ),
-         Container(
+          Container(
             height: 20,
           ),
-         TextFormField(
+          TextFormField(
             decoration: const InputDecoration(
               hintText: "Senha",
             ),
             validator: (value) {
               if (value!.isEmpty) {
-                return 'informe algum texto';
+                return 'Informe a senha';
               }
               return null;
             },
           ),
+          Container(
+            height: 20,
+          ),
           ElevatedButton(
             onPressed: () {
-              if (_formkey.currentState!.validate()) ;
+              if (_formkey.currentState!.validate()) {}
             },
-            child: Text('enviar'),
+            child: const Text('Enviar'),
           ),
+          //PageCadastro(),
         ],
       ),
     );
