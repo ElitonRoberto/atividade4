@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cadastro.dart';
+
 
 class PageLogin extends StatelessWidget {
   const PageLogin({super.key});
@@ -72,11 +72,12 @@ class _FormLogin extends State<FormLogin> {
           ),
           ElevatedButton(
             onPressed: () {
-              if (_formkey.currentState!.validate()) {}
+              if (_formkey.currentState!.validate()) {
+               Navigator.pushNamed(context, '/cadastro');
+              }
             },
             child: const Text('Enviar'),
           ),
-          //PageCadastro(),
         ],
       ),
     );

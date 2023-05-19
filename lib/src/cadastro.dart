@@ -99,6 +99,8 @@ class _FormCadastro extends State<FormCadastro> {
             onPressed: () {
               if (_formkey.currentState!.validate()) {}
               setState(() {});
+                      const snackBar =  SnackBar(content: Text('Cadastro realizado com sucesso!'));
+                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
             child: const Text('Cadastrar'),
           ),
