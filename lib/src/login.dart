@@ -12,7 +12,7 @@ class PageLogin extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          FormLogin(), //precisa da estrutura body para ser chamado
+          FormLogin(),
         ],
       ),
     );
@@ -41,12 +41,12 @@ class _FormLogin extends State<FormLogin> {
             decoration: const InputDecoration(
               hintText: 'Usuário',
             ),
-            /*validator: (value) {
-              /*if (value!.isEmpty) {
+            validator: (value) {
+              if (value!.isEmpty) {
                 return 'Informe o usuário';
-              }*/
+              }
               return null;
-            },*/
+            },
           ),
           Container(
             height: 20,
@@ -55,12 +55,12 @@ class _FormLogin extends State<FormLogin> {
             decoration: const InputDecoration(
               hintText: "Senha",
             ),
-            /* validator: (value) {
-              /*if (value!.isEmpty) {
+            validator: (value) {
+              if (value!.isEmpty) {
                 return 'Informe a senha';
-              }*/
+              }
               return null;
-            },*/
+            },
           ),
           Container(
             height: 20,

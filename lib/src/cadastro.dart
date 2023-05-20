@@ -12,7 +12,7 @@ class PageCadastro extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          FormCadastro(), //precisa da estrutura body para ser chamado
+          FormCadastro(),
         ],
       ),
     );
