@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
 
-
 class PageLogin extends StatelessWidget {
   const PageLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Login"),
-          centerTitle: true,
-        ),
-        body: const Column(
-          children: [
-            FormLogin(), //precisa da estrutura body para ser chamado
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Login"),
+        centerTitle: true,
+      ),
+      body: const Column(
+        children: [
+          FormLogin(), //precisa da estrutura body para ser chamado
+        ],
       ),
     );
   }
@@ -32,7 +29,7 @@ class FormLogin extends StatefulWidget {
 class _FormLogin extends State<FormLogin> {
   final _formkey = GlobalKey<FormState>();
 
-  bool a = false;
+  //bool a = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,14 +41,12 @@ class _FormLogin extends State<FormLogin> {
             decoration: const InputDecoration(
               hintText: 'Usuário',
             ),
-            validator: (value) {
-              if (value!.isEmpty) {
+            /*validator: (value) {
+              /*if (value!.isEmpty) {
                 return 'Informe o usuário';
-              } else if (value == 'A') {
-                //return
-              }
+              }*/
               return null;
-            },
+            },*/
           ),
           Container(
             height: 20,
@@ -60,21 +55,20 @@ class _FormLogin extends State<FormLogin> {
             decoration: const InputDecoration(
               hintText: "Senha",
             ),
-            validator: (value) {
-              if (value!.isEmpty) {
+            /* validator: (value) {
+              /*if (value!.isEmpty) {
                 return 'Informe a senha';
-              }
+              }*/
               return null;
-            },
+            },*/
           ),
           Container(
             height: 20,
           ),
           ElevatedButton(
             onPressed: () {
-              if (_formkey.currentState!.validate()) {
-               Navigator.pushNamed(context, '/cadastro');
-              }
+              if (_formkey.currentState!.validate()) {}
+              Navigator.pushNamed(context, '/cadastro');
             },
             child: const Text('Enviar'),
           ),

@@ -5,17 +5,15 @@ class PageCadastro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Cadastro"),
-          centerTitle: true,
-        ),
-        body: const Column(
-          children: [
-            FormCadastro(), //precisa da estrutura body para ser chamado
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Cadastro"),
+        centerTitle: true,
+      ),
+      body: const Column(
+        children: [
+          FormCadastro(), //precisa da estrutura body para ser chamado
+        ],
       ),
     );
   }
@@ -98,9 +96,11 @@ class _FormCadastro extends State<FormCadastro> {
           ElevatedButton(
             onPressed: () {
               if (_formkey.currentState!.validate()) {}
-              setState(() {});
-                      const snackBar =  SnackBar(content: Text('Cadastro realizado com sucesso!'));
-                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              /*setState(() {});
+              const snackBar =
+                  SnackBar(content: Text('Cadastro realizado com sucesso!'));
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);*/
+              //Navigator.pushNamed(context, "/login");
             },
             child: const Text('Cadastrar'),
           ),
